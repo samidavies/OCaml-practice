@@ -1,0 +1,10 @@
+### Starting build.
+# Target: hello_world.ml.depends, tags: { extension:ml, file:hello_world.ml, ocaml, ocamldep, quiet }
+ocamldep.opt -modules hello_world.ml > hello_world.ml.depends
+# Target: hello_world.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:hello_world.cmo, file:hello_world.ml, implem, ocaml, quiet }
+ocamlc.opt -c -o hello_world.cmo hello_world.ml
+# Target: hello_world.cmx, tags: { compile, extension:cmx, extension:ml, file:hello_world.cmx, file:hello_world.ml, implem, native, ocaml, quiet }
+ocamlopt.opt -c -o hello_world.cmx hello_world.ml
+# Target: hello_world.native, tags: { dont_link_with, extension:native, file:hello_world.native, link, native, ocaml, program, quiet }
+ocamlopt.opt hello_world.cmx -o hello_world.native
+# Compilation successful.
